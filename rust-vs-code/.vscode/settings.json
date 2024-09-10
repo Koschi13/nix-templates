@@ -1,0 +1,17 @@
+{
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "rust-analyzer.completion.autoimport.enable": false,
+    "files.autoSave": "onFocusChange",
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.check.extraArgs": [
+        "--",
+        "--warn=clippy::pedantic"
+    ],
+    "code-runner.executorMap": {
+        "rust": "cargo run # $fileName"
+    },
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.iconTheme": "catppuccin-frappe"
+}
