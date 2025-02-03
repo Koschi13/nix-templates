@@ -30,6 +30,7 @@
                   tamasfe.even-better-toml
                   jnoortheen.nix-ide
                   formulahendry.code-runner
+                  continue.continue  # Ollama coding assistent
                 ];
               })
             ];
