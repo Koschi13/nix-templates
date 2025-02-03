@@ -11,11 +11,18 @@
           pkgs = import nixpkgs {
             inherit system;
           };
+
+          codiumCodeAlias = pkgs.writeShellScriptBin "code" ''
+            codium "$@"
+          '';
         in
         with pkgs;
         {
           devShells.default = mkShell {
             buildInputs = [
+              # Alias
+              codiumCodeAlias
+
               # Ide
               (vscode-with-extensions.override {
                 vscode = vscodium;
