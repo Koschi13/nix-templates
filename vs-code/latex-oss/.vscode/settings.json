@@ -1,0 +1,24 @@
+{
+    //
+    // editor
+    //
+    "editor.inlayHints.enabled": "onUnlessPressed",
+
+    //
+    // files
+    //
+    "files.autoSave": "onFocusChange",
+
+    //
+    // window
+    //
+    "window.autoDetectColorScheme": false,
+
+    //
+    // workbench
+    //
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte"
+}
