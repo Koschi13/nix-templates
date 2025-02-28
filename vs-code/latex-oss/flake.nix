@@ -34,6 +34,8 @@
                   jnoortheen.nix-ide
                   bbenoist.nix
                   james-yu.latex-workshop
+                  continue.continue  # Ollama coding assistent
+                  streetsidesoftware.code-spell-checker
                 ];
               })
             ];
