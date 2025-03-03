@@ -47,6 +47,9 @@
             pkgs.postgresql_16
             pkgs.postgresql_16.lib
 
+            # dev tools
+            pkgs.pre-commit
+
             # Aliases and function
             poetryAlias
             pytestWithIPythonAlias
@@ -67,6 +70,13 @@
             export POETRY_VIRTUALENVS_CREATE="true";
             export POETRY_VIRTUALENVS_IN_PROJECT="true";
             export POETRY_VIRTUALENVS_OPTIONS_ALWAYS_COPY="true";
+
+            if [[ -f ".pre-commit-config.yaml" ]]; then
+              printf "Install pre-commit hook...\n"
+              pre-commit install
+            else
+              printf "No .pre-commit-config.yaml found, skipping installation of the hook!\n"
+            fi
 
             printf "\nPython environment loaded \n";
           '';
