@@ -20,5 +20,6 @@
     "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "catppuccin-frappe",
     "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
-    "workbench.preferredLightColorTheme": "Catppuccin Latte"
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "cSpell.language": "en,de-DE"
 }

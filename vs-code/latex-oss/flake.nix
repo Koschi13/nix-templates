@@ -1,14 +1,18 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsKoschi13.url = "github:Koschi13/nixpkgs/add-vscode-extensions.streetsidesoftware.code-spell-checker-german";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, nixpkgsKoschi13, ... }:
     flake-utils.lib.eachDefaultSystem (
       system:
         let
           pkgs = import nixpkgs {
+            inherit system;
+          };
+          pkgsKoschi13 = import nixpkgsKoschi13 {
             inherit system;
           };
 
@@ -36,6 +40,9 @@
                   james-yu.latex-workshop
                   continue.continue  # Ollama coding assistent
                   streetsidesoftware.code-spell-checker
+                ] ++
+                [
+                  pkgsKoschi13.vscode-extensions.streetsidesoftware.code-spell-checker-german
                 ];
               })
             ];
