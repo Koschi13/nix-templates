@@ -4,20 +4,23 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-          };
+      system: let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
 
-          codiumCodeAlias = pkgs.writeShellScriptBin "code" ''
-            codium "$@"
-          '';
-        in
-        with pkgs;
-        {
+        codiumCodeAlias = pkgs.writeShellScriptBin "code" ''
+          codium "$@"
+        '';
+      in
+        with pkgs; {
           devShells.default = mkShell {
             buildInputs = [
               # Alias
@@ -37,7 +40,7 @@
                   tamasfe.even-better-toml
                   jnoortheen.nix-ide
                   formulahendry.code-runner
-                  continue.continue  # Ollama coding assistent
+                  continue.continue # Ollama coding assistent
                 ];
               })
             ];

@@ -36,7 +36,7 @@
           buildInputs = [
             # Python + Poetry
             (python.withPackages (ps: with ps; [pip]))
-            (pkgs.poetry.override { python3 = python; })
+            (pkgs.poetry.override {python3 = python;})
 
             # Python run deps
             pkgs.stdenv.cc.cc.lib
@@ -56,7 +56,7 @@
             poetryVimAlias
           ];
           # Extent the LD_LIBRARY_PATH with the binaries needed by python, so python can find them
-          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.stdenv.cc.cc.lib pkgs.libGL pkgs.glib.out pkgs.postgresql_16.lib ]}:$LD_LIBRARY_PATH";
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.stdenv.cc.cc.lib pkgs.libGL pkgs.glib.out pkgs.postgresql_16.lib]}:$LD_LIBRARY_PATH";
 
           shellHook = ''
             # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.

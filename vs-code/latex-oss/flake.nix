@@ -1,27 +1,25 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgsKoschi13.url = "github:Koschi13/nixpkgs/add-vscode-extensions.streetsidesoftware.code-spell-checker-german";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, nixpkgsKoschi13, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-          };
-          pkgsKoschi13 = import nixpkgsKoschi13 {
-            inherit system;
-          };
-
-          codiumCodeAlias = pkgs.writeShellScriptBin "code" ''
-            codium "$@"
-          '';
-        in
-        with pkgs;
-        {
+      system: let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+        codiumCodeAlias = pkgs.writeShellScriptBin "code" ''
+          codium "$@"
+        '';
+      in
+        with pkgs; {
           devShells.default = mkShell {
             buildInputs = [
               # Alias
@@ -38,11 +36,8 @@
                   jnoortheen.nix-ide
                   bbenoist.nix
                   james-yu.latex-workshop
-                  continue.continue  # Ollama coding assistent
+                  continue.continue # Ollama coding assistent
                   streetsidesoftware.code-spell-checker
-                ] ++
-                [
-                  pkgsKoschi13.vscode-extensions.streetsidesoftware.code-spell-checker-german
                 ];
               })
             ];

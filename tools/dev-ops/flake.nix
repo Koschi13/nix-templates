@@ -21,7 +21,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-        pkgsKoschi13Nixpkgs = import koschi13Nixpkgs { inherit system; };
+        pkgsKoschi13Nixpkgs = import koschi13Nixpkgs {inherit system;};
 
         # Define which tools to install
         buildInputs = [
@@ -29,14 +29,14 @@
           pkgs.terragrunt
           pkgs.terraform
           pkgs.go-task
-          pkgs.nodejs_22  # For npx (formatting)
+          pkgs.nodejs_22 # For npx (formatting)
 
           # Custom packages
           pkgsKoschi13Nixpkgs.cloudfoundry-cli
         ];
       in {
         devShells.default = pkgs.mkShell {
-          buildInputs = buildInputs ++ [ pkgs.ansi ];
+          buildInputs = buildInputs ++ [pkgs.ansi];
 
           shellHook = ''
             if [[ -f ".pre-commit-config.yaml" ]]; then

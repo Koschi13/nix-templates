@@ -4,25 +4,28 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-          };
-        in
-        with pkgs;
-        {
+      system: let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in
+        with pkgs; {
           devShells.default = mkShell {
             nativeBuildInputs = [];
 
             buildInputs = [];
 
-            LD_LIBRARY_PATH = lib.makeLibraryPath [  ];
+            LD_LIBRARY_PATH = lib.makeLibraryPath [];
 
             shellHook = ''
-            echo "Hello, I am empty."
+              echo "Hello, I am empty."
             '';
           };
         }
