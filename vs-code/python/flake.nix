@@ -33,9 +33,10 @@
                   tamasfe.even-better-toml
                   # Nix
                   bbenoist.nix
-                  # Rust
-                  rust-lang.rust-analyzer
-                  vadimcn.vscode-lldb
+                  jnoortheen.nix-ide
+                  # Python
+                  ms-python.python
+                  ms-python.debugpy
                   # Utility
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare

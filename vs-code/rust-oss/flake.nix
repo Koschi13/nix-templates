@@ -31,15 +31,21 @@
                 vscode = vscodium;
                 # https://users.rust-lang.org/t/setting-up-rust-with-vs-code/76907
                 vscodeExtensions = with vscode-extensions; [
-                  bbenoist.nix
-                  rust-lang.rust-analyzer
-                  vadimcn.vscode-lldb
+                  # Themes
                   catppuccin.catppuccin-vsc
                   catppuccin.catppuccin-vsc-icons
+                  # Editor
                   vscodevim.vim
+                  # Toml
                   tamasfe.even-better-toml
-                  jnoortheen.nix-ide
+                  # Nix
+                  bbenoist.nix
+                  # Rust
+                  rust-lang.rust-analyzer
+                  vadimcn.vscode-lldb
+                  # Utility
                   formulahendry.code-runner
+                  visualstudioexptteam.vscodeintellicode
                   continue.continue # Ollama coding assistent
                 ];
               })

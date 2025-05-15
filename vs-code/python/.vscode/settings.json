@@ -1,0 +1,31 @@
+{
+    //
+    // code-runner
+    //
+    "code-runner.executorMap": {
+        "python": "python $fileName"
+    },
+
+    //
+    // editor
+    //
+    "editor.inlayHints.enabled": "onUnlessPressed",
+
+    //
+    // files
+    //
+    "files.autoSave": "onFocusChange",
+
+    //
+    // window
+    //
+    "window.autoDetectColorScheme": true,
+
+    //
+    // workbench
+    //
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte"
+}
