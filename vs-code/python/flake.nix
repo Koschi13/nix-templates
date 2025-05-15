@@ -20,7 +20,8 @@
         with pkgs; {
           devShells.default = mkShell {
             buildInputs = [
-              # Ide
+              ruff
+
               (vscode-with-extensions.override {
                 # https://users.rust-lang.org/t/setting-up-rust-with-vs-code/76907
                 vscodeExtensions = with vscode-extensions; [
@@ -37,10 +38,10 @@
                   # Python
                   ms-python.python
                   ms-python.debugpy
+                  charliermarsh.ruff
                   # Utility
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
-                  visualstudioexptteam.vscodeintellicode
                 ];
               })
             ];

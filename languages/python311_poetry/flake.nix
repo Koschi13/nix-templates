@@ -52,13 +52,13 @@
 
             # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
             # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
-            PIP_PREFIX="$(pwd)/_build/pip_packages";
-            PYTHONPATH="$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
+            PIP_PREFIX = "$(pwd)/_build/pip_packages";
+            PYTHONPATH = "$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
 
             # Configure poetry to use .virtualenv and copy all packages to it instead of relying on the system path
-            POETRY_VIRTUALENVS_CREATE="true";
-            POETRY_VIRTUALENVS_IN_PROJECT="true";
-            POETRY_VIRTUALENVS_OPTIONS_ALWAYS_COPY="true";
+            POETRY_VIRTUALENVS_CREATE = "true";
+            POETRY_VIRTUALENVS_IN_PROJECT = "true";
+            POETRY_VIRTUALENVS_OPTIONS_ALWAYS_COPY = "true";
           };
 
           shellHook = ''

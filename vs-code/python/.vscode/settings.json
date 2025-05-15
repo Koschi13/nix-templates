@@ -27,5 +27,10 @@
     "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "catppuccin-frappe",
     "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
-    "workbench.preferredLightColorTheme": "Catppuccin Latte"
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+
+    //
+    // Python
+    //
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3"
 }
