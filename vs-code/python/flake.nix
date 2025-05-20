@@ -36,12 +36,16 @@
                   bbenoist.nix
                   jnoortheen.nix-ide
                   # Python
-                  ms-python.python
-                  ms-python.debugpy
                   charliermarsh.ruff
+                  # kevinrose.vsc-python-indent  # TODO: create extension
+                  ms-python.debugpy
+                  ms-python.python
+                  ms-python.vscode-pylance
+                  njpwerner.autodocstring
                   # Utility
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
+                  streetsidesoftware.code-spell-checker
                 ];
               })
             ];
