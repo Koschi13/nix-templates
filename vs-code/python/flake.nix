@@ -42,6 +42,9 @@
                   ms-python.python
                   ms-python.vscode-pylance
                   njpwerner.autodocstring
+                  # GitHub
+                  github.copilot
+                  github.copilot-chat
                   # Utility
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
