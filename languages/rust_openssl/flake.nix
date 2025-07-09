@@ -17,17 +17,16 @@
     self,
     nixpkgs,
     flake-utils,
-    rust-overlay
+    rust-overlay,
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
-        overlays = [ (import rust-overlay) ];
+        overlays = [(import rust-overlay)];
         pkgs = import nixpkgs {
           inherit system overlays;
         };
 
         rustToolchain = pkgs.pkgsBuildHost.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
@@ -49,4 +48,3 @@
       }
     );
 }
-
