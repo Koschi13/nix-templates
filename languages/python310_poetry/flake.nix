@@ -49,7 +49,7 @@
             poetryVimAlias
           ];
           # Extent the LD_LIBRARY_PATH with the binaries needed by python, so python can find them
-          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.stdenv.cc.cc.lib pkgs.libGL pkgs.glib.out]}:$LD_LIBRARY_PATH";
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.stdenv.cc.cc.lib pkgs.libGL pkgs.glib.out]}";
 
           shellHook = ''
             # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.

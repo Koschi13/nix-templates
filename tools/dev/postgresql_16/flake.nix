@@ -25,10 +25,10 @@
             pkgs.postgresql_16.lib
           ];
           # Extent the LD_LIBRARY_PATH with the binaries needed by python, so python can find them
-          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.postgresql_16.lib]}:$LD_LIBRARY_PATH";
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.postgresql_16.lib]}";
 
           shellHook = ''
-            printf "\nPostgreSQL 16 envrionment \n";
+            printf "\nPostgreSQL 16 envrionment loaded \n";
           '';
         };
       }

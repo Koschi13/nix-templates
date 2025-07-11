@@ -48,7 +48,7 @@
           ];
 
           env = {
-            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}:$LD_LIBRARY_PATH";
+            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}";
 
             # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
             # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
