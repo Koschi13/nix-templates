@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    terraformNixpkgs.url = "github:nixos/nixpkgs/4ab8a3de296914f3b631121e9ce3884f1d34e1e5";  # 1.5.7
 
     koschi13Nixpkgs.url = "github:Koschi13/nixpkgs";
   };
@@ -13,6 +14,7 @@
     nixpkgs,
     flake-utils,
     koschi13Nixpkgs,
+    terraformNixpkgs,
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
@@ -22,17 +24,18 @@
           config.allowUnfree = true;
         };
         pkgsKoschi13Nixpkgs = import koschi13Nixpkgs {inherit system;};
+        pkgsTerraformNixpkgs = import terraformNixpkgs {inherit system;};
 
         # Define which tools to install
         buildInputs = [
           pkgs.pre-commit
           pkgs.terragrunt
-          pkgs.terraform
           pkgs.go-task
           pkgs.nodejs_22 # For npx (formatting)
-
           # Custom packages
           pkgsKoschi13Nixpkgs.cloudfoundry-cli
+          pkgsTerraformNixpkgs.terraform
+
         ];
       in {
         devShells.default = pkgs.mkShell {
