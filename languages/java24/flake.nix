@@ -19,7 +19,7 @@
         };
 
         # Nix aliases
-        java = pkgs.zulu11;
+        java = pkgs.zulu24;
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
@@ -30,7 +30,7 @@
             pkgs.maven
           ];
           shellHook = ''
-            printf "\nJava environment loaded \n";
+            printf "\nJava 24 environment loaded \n";
           '';
         };
       }
