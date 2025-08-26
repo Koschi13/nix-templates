@@ -18,28 +18,13 @@
         "type": "github"
       }
     },
-    "koschi13Nixpkgs": {
-      "locked": {
-        "lastModified": 1741053493,
-        "narHash": "sha256-XhGC1qv3MVzX3AzoU6HJC0pbM5X2ztU7eKjn94tIMAU=",
-        "owner": "Koschi13",
-        "repo": "nixpkgs",
-        "rev": "2cc9bbf8e50038e99c232ce74bcd44edd1bd8263",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Koschi13",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1755615617,
-        "narHash": "sha256-HMwfAJBdrr8wXAkbGhtcby1zGFvs+StOp19xNsbqdOg=",
+        "lastModified": 1756125398,
+        "narHash": "sha256-XexyKZpf46cMiO5Vbj+dWSAXOnr285GHsMch8FBoHbc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "20075955deac2583bb12f07151c2df830ef346b4",
+        "rev": "3b9f00d7a7bf68acd4c4abb9d43695afb04e03a5",
         "type": "github"
       },
       "original": {
@@ -52,7 +37,6 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "koschi13Nixpkgs": "koschi13Nixpkgs",
         "nixpkgs": "nixpkgs",
         "terraformNixpkgs": "terraformNixpkgs"
       }
