@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    terraformNixpkgs.url = "github:nixos/nixpkgs/4ab8a3de296914f3b631121e9ce3884f1d34e1e5";  # 1.5.7
+    terraformNixpkgs.url = "github:nixos/nixpkgs/4ab8a3de296914f3b631121e9ce3884f1d34e1e5"; # 1.5.7
   };
 
   outputs = {
@@ -19,7 +19,6 @@
         # Source definitions
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
         };
         pkgsTerraformNixpkgs = import terraformNixpkgs {inherit system;};
 

@@ -30,7 +30,6 @@
           pkgs.nodejs_22 # For npx (formatting)
           # Custom packages
           pkgsKoschi13Nixpkgs.cloudfoundry-cli
-
         ];
       in {
         devShells.default = pkgs.mkShell {

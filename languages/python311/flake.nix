@@ -27,7 +27,6 @@
 
             # dev tools
             pkgs.pre-commit
-
           ];
 
           env = {

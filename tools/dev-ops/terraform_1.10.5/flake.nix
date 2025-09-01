@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    terraformNixpkgs.url = "github:nixos/nixpkgs/0bd7f95e4588643f2c2d403b38d8a2fe44b0fc73";  # 1.10.5
+    terraformNixpkgs.url = "github:nixos/nixpkgs/0bd7f95e4588643f2c2d403b38d8a2fe44b0fc73"; # 1.10.5
   };
 
   outputs = {
@@ -21,7 +21,10 @@
           inherit system;
           config.allowUnfree = true;
         };
-        pkgsTerraformNixpkgs = import terraformNixpkgs {inherit system;};
+        pkgsTerraformNixpkgs = import terraformNixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
 
         # Define which tools to install
         buildInputs = [
