@@ -40,6 +40,7 @@
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
                   visualstudioexptteam.vscodeintellicode
+                  eamodio.gitlens
                 ];
               })
             ];

@@ -46,7 +46,8 @@
                   # Utility
                   formulahendry.code-runner
                   visualstudioexptteam.vscodeintellicode
-                  continue.continue # Ollama coding assistent
+                  continue.continue # Ollama coding assistant
+                  eamodio.gitlens
                 ];
               })
             ];

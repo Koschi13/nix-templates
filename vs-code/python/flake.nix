@@ -49,6 +49,7 @@
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
                   streetsidesoftware.code-spell-checker
+                  eamodio.gitlens
                 ];
               })
             ];
