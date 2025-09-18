@@ -45,6 +45,7 @@
                   # GitHub
                   github.copilot
                   github.copilot-chat
+                  github.vscode-pull-request-github
                   # Utility
                   formulahendry.code-runner
                   ms-vsliveshare.vsliveshare
