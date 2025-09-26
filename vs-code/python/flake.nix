@@ -51,6 +51,7 @@
                   ms-vsliveshare.vsliveshare
                   streetsidesoftware.code-spell-checker
                   eamodio.gitlens
+                  bruno-api-client.bruno
                 ];
               })
             ];
