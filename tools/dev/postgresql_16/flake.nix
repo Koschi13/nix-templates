@@ -23,6 +23,7 @@
             # Python test deps
             pkgs.postgresql_16
             pkgs.postgresql_16.lib
+            pkgs.postgresql_16.pg_config
           ];
           # Extent the LD_LIBRARY_PATH with the binaries needed by python, so python can find them
           LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.postgresql_16.lib]}";
