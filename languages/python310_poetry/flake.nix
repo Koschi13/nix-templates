@@ -38,18 +38,15 @@
             python
             pkgs.poetry
 
-            # Python run deps
-            pkgs.stdenv.cc.cc.lib
-            pkgs.libGL
-            pkgs.glib.out
-
             # Aliases and function
             poetryAlias
             pytestWithIPythonAlias
             poetryVimAlias
           ];
-          # Extent the LD_LIBRARY_PATH with the binaries needed by python, so python can find them
-          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [pkgs.stdenv.cc.cc.lib pkgs.libGL pkgs.glib.out]}";
+
+          env = {
+            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}";
+          };
 
           shellHook = ''
             # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.

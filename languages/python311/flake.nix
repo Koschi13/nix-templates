@@ -20,16 +20,8 @@
 
         # Nix aliases
         python = pkgs.python311;
-
-        nativeBuildInputs = with pkgs; [
-          stdenv.cc.cc.lib
-          libGL
-          glib
-        ];
       in {
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = nativeBuildInputs;
-
           buildInputs = [
             (python.withPackages (ps: with ps; [pip]))
 
@@ -38,15 +30,15 @@
           ];
 
           env = {
-            # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
-            # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
-            PIP_PREFIX = "$(pwd)/_build/pip_packages";
-            PYTHONPATH = "$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
-
-            LD_LIBRARY_PATH = "${pkgs.lib.strings.makeLibraryPath nativeBuildInputs}";
+            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}";
           };
 
           shellHook = ''
+            # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
+            # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
+            export PIP_PREFIX="$(pwd)/_build/pip_packages";
+            export PYTHONPATH="$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
+            export PATH="$PIP_PREFIX/bin:$PATH";
             unset SOURCE_DATE_EPOCH;
 
             if [[ -f ".pre-commit-config.yaml" ]]; then

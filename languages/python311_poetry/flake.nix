@@ -49,20 +49,20 @@
 
           env = {
             LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}";
-
-            # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
-            # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
-            PIP_PREFIX = "$(pwd)/_build/pip_packages";
-            PYTHONPATH = "$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
-
-            # Configure poetry to use .virtualenv and copy all packages to it instead of relying on the system path
-            POETRY_VIRTUALENVS_CREATE = "true";
-            POETRY_VIRTUALENVS_IN_PROJECT = "true";
-            POETRY_VIRTUALENVS_OPTIONS_ALWAYS_COPY = "true";
           };
 
           shellHook = ''
+            # Tells pip to put packages into $PIP_PREFIX instead of the usual locations.
+            # See https://pip.pypa.io/en/stable/user_guide/#environment-variables.
+            export PIP_PREFIX="$(pwd)/_build/pip_packages";
+            export PYTHONPATH="$PIP_PREFIX/${python.sitePackages}:$PYTHONPATH";
+            export PATH="$PIP_PREFIX/bin:$PATH";
             unset SOURCE_DATE_EPOCH;
+
+            # Configure poetry to use .virtualenv and copy all packages to it instead of relying on the system path
+            export POETRY_VIRTUALENVS_CREATE="true";
+            export POETRY_VIRTUALENVS_IN_PROJECT="true";
+            export POETRY_VIRTUALENVS_OPTIONS_ALWAYS_COPY="true";
 
             if [[ -f ".pre-commit-config.yaml" ]]; then
               printf "Install pre-commit hook...\n"
