@@ -20,8 +20,18 @@
 
         # Nix aliases
         python = pkgs.python311;
+
+        nativeBuildInputs = with pkgs;
+          [
+            stdenv.cc.cc.lib
+            libGL
+            glib
+          ]
+          ++ pkgs.pythonManylinuxPackages.manylinux1;
       in {
         devShells.default = pkgs.mkShell {
+          nativeBuildInputs = nativeBuildInputs;
+
           buildInputs = [
             (python.withPackages (ps: with ps; [pip]))
 
@@ -30,7 +40,7 @@
           ];
 
           env = {
-            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1}";
+            LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath nativeBuildInputs}";
           };
 
           shellHook = ''

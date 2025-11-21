@@ -40,9 +40,7 @@
             pytestWithIPythonAlias
           ];
 
-
           env = {
-
             # Configure poetry to use .virtualenv and copy all packages to it instead of relying on the system path
             POETRY_VIRTUALENVS_CREATE = "true";
             POETRY_VIRTUALENVS_IN_PROJECT = "true";
