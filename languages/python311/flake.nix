@@ -26,8 +26,7 @@
             stdenv.cc.cc.lib
             libGL
             glib
-          ]
-          ++ pkgs.pythonManylinuxPackages.manylinux1;
+          ];
       in {
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = nativeBuildInputs;
