@@ -50,6 +50,8 @@
             export PATH="$PIP_PREFIX/bin:$PATH";
             unset SOURCE_DATE_EPOCH;
 
+            export PYTHONWARNINGS=once
+
             if [[ -f ".pre-commit-config.yaml" ]]; then
               printf "Install pre-commit hook...\n"
               pre-commit install
