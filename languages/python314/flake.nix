@@ -32,7 +32,7 @@
           nativeBuildInputs = nativeBuildInputs;
 
           buildInputs = [
-            (python.withPackages (ps: with ps; [pip]))
+            python
 
             # dev tools
             pkgs.pre-commit
