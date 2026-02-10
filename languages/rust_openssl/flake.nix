@@ -35,6 +35,7 @@
 
             pkgs.pkg-config
             pkgs.openssl
+            pkgs.llvmPackages.bintools
           ];
 
           env = {
