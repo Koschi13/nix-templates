@@ -121,6 +121,10 @@
             inherit bashColors;
             pkgs = pkgs-at-poetry-2_2_1;
           };
+          tools_dev_uv = import ./devShells/tools/dev/uv.nix {
+            inherit bashColors;
+            pkgs = pkgs;
+          };
 
           #####################################################################
           # Tools - Dev-Ops
