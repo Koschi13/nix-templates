@@ -26,6 +26,6 @@ in
       printf "${bashColors.Purple}Setting up uv virtual environment:${bashColors.Color_Off}\n"
       uv sync
 
-      printf "\n${bashColors.Green}UV ${pkgs.uv.version} enviriontment loaded ${bashColors.Color_Off}\n";
+      printf "\n${bashColors.Green}uv ${pkgs.uv.version} enviriontment loaded ${bashColors.Color_Off}\n";
     '';
   }
