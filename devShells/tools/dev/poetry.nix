@@ -1,4 +1,7 @@
-{pkgs, bashColors}: let
+{
+  pkgs,
+  bashColors,
+}: let
   # Aliases and functions (Aliases in the shellHook are not possible because of direnv, this fixes it)
   poetryAlias = pkgs.writeShellScriptBin "po" ''
     poetry "$@"
@@ -12,7 +15,6 @@
 in
   pkgs.mkShell {
     buildInputs = [
-      # Python + Poetry
       pkgs.poetry
 
       # Aliases and function

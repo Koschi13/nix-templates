@@ -1,7 +1,7 @@
 {
   pkgs,
   version,
-bashColors,
+  bashColors,
 }: let
   java = pkgs."zulu${version}";
 in

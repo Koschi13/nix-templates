@@ -113,8 +113,14 @@
             version = "16";
           };
           tools_dev_poetry = import ./devShells/tools/dev/poetry.nix {inherit pkgs bashColors;};
-          tools_dev_poetry-1_6_1 = import ./devShells/tools/dev/poetry.nix {inherit bashColors; pkgs = pkgs-at-poetry-1_6_1;};
-          tools_dev_poetry-2_2_1 = import ./devShells/tools/dev/poetry.nix {inherit bashColors; pkgs = pkgs-at-poetry-2_2_1;};
+          tools_dev_poetry-1_6_1 = import ./devShells/tools/dev/poetry.nix {
+            inherit bashColors;
+            pkgs = pkgs-at-poetry-1_6_1;
+          };
+          tools_dev_poetry-2_2_1 = import ./devShells/tools/dev/poetry.nix {
+            inherit bashColors;
+            pkgs = pkgs-at-poetry-2_2_1;
+          };
 
           #####################################################################
           # Tools - Dev-Ops

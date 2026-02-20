@@ -1,4 +1,7 @@
-{pkgs, bashColors}: let
+{
+  pkgs,
+  bashColors,
+}: let
 in
   pkgs.mkShell {
     buildInputs = with pkgs; [

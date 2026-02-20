@@ -1,7 +1,7 @@
 {
   pkgs,
   version,
-bashColors,
+  bashColors,
 }: let
   nativeBuildInputs = with pkgs; [
     stdenv.cc.cc.lib
