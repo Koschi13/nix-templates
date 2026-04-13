@@ -7,6 +7,7 @@
     nixpkgs-at-poetry-2_2_1.url = "github:nixos/nixpkgs/231bb98e6b4411bad31de73a463bd557aa83b37e";
     nixpkgs-at-terraform-1_10_5.url = "github:nixos/nixpkgs/0bd7f95e4588643f2c2d403b38d8a2fe44b0fc73";
     nixpkgs-at-terraform-1_5_7.url = "github:nixos/nixpkgs/4ab8a3de296914f3b631121e9ce3884f1d34e1e5";
+    nixpkgs-at-python-3_11_15.url = "github:nixos/nixpkgs/b96b24b501d17a0637bb04206094794da956932d";
     nixpkgs-koschi13.url = "github:Koschi13/nixpkgs";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
@@ -17,6 +18,7 @@
     nixpkgs,
     nixpkgs-at-poetry-1_6_1,
     nixpkgs-at-poetry-2_2_1,
+    nixpkgs-at-python-3_11_15,
     nixpkgs-at-terraform-1_10_5,
     nixpkgs-at-terraform-1_5_7,
     nixpkgs-koschi13,
@@ -34,6 +36,15 @@
         pkgsUnfreeKoschi13 = import nixpkgs-koschi13 {
           inherit system;
           config.allowUnfree = true;
+        };
+
+        #######################################################################
+        # Python
+        #######################################################################
+        # Python 3.11 requires a locked hash, since recent versions of sphinx
+        # do not support 3.11 anymore
+        pkgs-at-python-3_11_15 = import nixpkgs-at-python-3_11_15 {
+          inherit system;
         };
 
         #######################################################################
@@ -84,7 +95,8 @@
           };
 
           languages_python311 = import ./devShells/languages/python.nix {
-            inherit pkgs bashColors;
+            inherit bashColors;
+            pkgs = pkgs-at-python-3_11_15;
             version = "311";
           };
           languages_python312 = import ./devShells/languages/python.nix {
