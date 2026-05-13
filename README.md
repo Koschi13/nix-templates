@@ -44,3 +44,8 @@ nix develop .#<name-of-devshell>
 
 `<name-of-devshell>` can be obtained by looking at the `flake.nix` or running
 `nix flake show`
+
+## TODO
+
+- [ ] Instead or additionally to `devShells` make use of `devenv` which seems to
+      provide all I want

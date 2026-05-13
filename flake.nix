@@ -160,7 +160,7 @@
           #####################################################################
           vs-code_java = import ./devShells/vs-code/java.nix {inherit pkgsUnfree;};
           vs-code_latex-oss = import ./devShells/vs-code/latex-oss.nix {inherit pkgs;};
-          vs-code_python = import ./devShells/vs-code/python.nix {inherit pkgsUnfree;};
+          vs-code_python = import ./devShells/vs-code/python.nix {inherit pkgsUnfree bashColors;};
           vs-code_rust = import ./devShells/vs-code/rust.nix {inherit pkgsUnfree;};
           vs-code_rust-oss = import ./devShells/vs-code/rust-oss.nix {inherit pkgs;};
         };
