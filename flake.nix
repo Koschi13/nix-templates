@@ -79,7 +79,14 @@
           #####################################################################
           # Languages
           #####################################################################
-          languages_node-20-yarn = import ./devShells/languages/node-20-yarn.nix {inherit pkgs bashColors;};
+          languages_node-20-yarn = import ./devShells/languages/node-yarn.nix {
+            inherit pkgs bashColors;
+            version = "20";
+          };
+          languages_node-26-yarn = import ./devShells/languages/node-yarn.nix {
+            inherit pkgs bashColors;
+            version = "26";
+          };
 
           languages_java11 = import ./devShells/languages/java.nix {
             inherit pkgs bashColors;
