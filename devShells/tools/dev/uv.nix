@@ -13,6 +13,7 @@ in
   pkgs.mkShell {
     buildInputs = [
       pkgs.uv
+      pkgs.hatch
 
       # Aliases and function
       uvVimAlaias
