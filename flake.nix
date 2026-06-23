@@ -83,6 +83,10 @@
             inherit pkgs bashColors;
             version = "20";
           };
+          languages_node-22-yarn = import ./devShells/languages/node-yarn.nix {
+            inherit pkgs bashColors;
+            version = "22";
+          };
           languages_node-26-yarn = import ./devShells/languages/node-yarn.nix {
             inherit pkgs bashColors;
             version = "26";
